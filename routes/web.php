@@ -14,3 +14,4 @@ Route::get('/', [HomeController::class,'dashboard']);
 Route::get('/category/list', [CategoryController::class, 'list']);
 Route::get('/category/form', [CategoryController::class, 'form']);
 Route::post('/category/store', [CategoryController::class, 'store']);
+Route::get('/category/delete', [CategoryController::class, 'delete']);
