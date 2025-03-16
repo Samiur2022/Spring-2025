@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function list(){
-        return view('categoryList');
+
+        $cat = Category::all();
+        return view('categoryList',compact('cat'));
     }
 
 
