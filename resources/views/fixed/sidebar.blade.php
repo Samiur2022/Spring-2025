@@ -57,16 +57,16 @@
             <li class="side-nav-title">Features</li>
 
             <li class="side-nav-item">
-                <a href="{{url('/category')}}" class="side-nav-link">
+                <a href="{{route('cat.list')}}" class="side-nav-link">
                     <i class="uil-calender"></i>
                     <span> Category </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-chat.html" class="side-nav-link">
+                <a href="{{}}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Chat </span>
+                    <span> Product </span>
                 </a>
             </li>
 

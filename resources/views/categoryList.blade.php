@@ -28,7 +28,7 @@
                     <td>{{$cats->descp}}</</td>
                     <td>
                         <a class="btn btn-warning" href="">edit</a>
-                        <a class="btn btn-danger" href="">delete</a>
+                        <a class="btn btn-danger" href="{{route('cat.delete',$cats->id)}}">delete</a>
                     </td>
                     </tr>
                 @endforeach

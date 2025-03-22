@@ -11,7 +11,9 @@ Route::get('/', [HomeController::class,'dashboard']);
 
 //Category
 
-Route::get('/category/list', [CategoryController::class, 'list']);
-Route::get('/category/form', [CategoryController::class, 'form']);
-Route::post('/category/store', [CategoryController::class, 'store']);
-Route::get('/category/delete', [CategoryController::class, 'delete']);
+Route::get('/category/list', [CategoryController::class, 'list'])->name('cat.list');
+Route::get('/category/form', [CategoryController::class, 'form'])->name('cat.form');
+Route::post('/category/store', [CategoryController::class, 'store'])->name('cat.store');
+Route::get('/category/delete/{cat_id}', [CategoryController::class, 'delete'])->name('cat.delete');
+
+
