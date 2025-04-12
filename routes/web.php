@@ -6,8 +6,12 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [HomeController::class,'dashboard']);
+Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
 
+//login Page
+
+Route::get('/login',[AuthenticationController::class, 'loginPageView']);
+Route::post('/Dologin',[AuthenticationController::class, 'submit'])->name('do.login');
 
 //Category
 

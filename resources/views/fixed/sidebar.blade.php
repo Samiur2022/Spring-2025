@@ -66,7 +66,7 @@
             <li class="side-nav-item">
                 <a href="{{}}" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Product </span>
+                    <span> Products </span>
                 </a>
             </li>
 
