@@ -28,8 +28,9 @@ class CategoryController extends Controller
             "name"=>$request->cat_name,
             "descp"=>$request->cat_decp
         ]);
+        notify()->success('Caategory Created');
 
-        return redirect()->back();
+        return redirect()->route('cat.list');
 
 
 
@@ -39,6 +40,7 @@ class CategoryController extends Controller
     public function delete($cat_id){
         $category = Category::find($cat_id);
         $category->delete();
+        notify()->error('category deleted');
         return redirect()->back();
 
 

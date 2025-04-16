@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-5">
-                <form action="{{url('/category/store')}}" method="post">
+                <form action="{{route('cat.store')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">CateGory Name</label>

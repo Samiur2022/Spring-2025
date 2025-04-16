@@ -18,10 +18,20 @@ class AuthenticationController extends Controller
        $check = Auth::attempt($credential);
         
        if($check){
+        notify()->success('login Sucessfully');
         return redirect()->route('dashboard');
        }
        else{
+        notify()->error('Incorrect email or password');
         return redirect()->back();
        }
+    }
+
+
+    public function logout(){
+        Auth::logout();
+        notify()->success('Successfully Logout');
+        return redirect()->route('login');
+
     }
 }

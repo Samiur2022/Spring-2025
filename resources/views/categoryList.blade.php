@@ -8,7 +8,7 @@
                 <div class="col-6">
                     <h2>Category list</h2>
                   <h1>{{count($cat)}}</h1>
-                    <a class="btn btn-primary" href="{{url('/category/form')}}" >Create Category</a>
+                    <a class="btn btn-primary" href="{{route('cat.form')}}" >Create Category</a>
                 <table class="table">
                 <thead>
 

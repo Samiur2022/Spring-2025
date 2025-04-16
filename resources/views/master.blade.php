@@ -9,6 +9,8 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
 
+    @notifyCss
+
     <!-- App favicon -->
     <link rel="shortcut icon" href="https://coderthemes.com/hyper/saas/assets/images/favicon.ico">
 
@@ -29,13 +31,14 @@
 
     <!-- Icons css -->
     <link href="https://coderthemes.com/hyper/saas/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
 </head>
 
 <body>
    <!-- Begin page -->
    <div class="wrapper">
 
-        
+@include('notify::components.notify')        
 <!-- ========== Topbar Start ========== -->
 @include('fixed.header')
 <!-- ========== Topbar End ========== -->
@@ -745,7 +748,7 @@
     </div>
 </div>
 </div>
-
+    @notifyJs
     <!-- Vendor js -->
     <script src="https://coderthemes.com/hyper/saas/assets/js/vendor.min.js"></script>
 

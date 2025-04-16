@@ -6,18 +6,34 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
+Route::group(['prefix' => 'admin'],function(){
 
-//login Page
+        
+   
 
-Route::get('/login',[AuthenticationController::class, 'loginPageView']);
-Route::post('/Dologin',[AuthenticationController::class, 'submit'])->name('do.login');
+    //login Page
 
-//Category
+    Route::get('/login',[AuthenticationController::class, 'loginPageView'])->name('login');
+    Route::post('/Dologin',[AuthenticationController::class, 'submit'])->name('do.login');
 
-Route::get('/category/list', [CategoryController::class, 'list'])->name('cat.list');
-Route::get('/category/form', [CategoryController::class, 'form'])->name('cat.form');
-Route::post('/category/store', [CategoryController::class, 'store'])->name('cat.store');
-Route::get('/category/delete/{cat_id}', [CategoryController::class, 'delete'])->name('cat.delete');
+        Route::group(['middleware' => 'auth'],function(){
+             Route::get('/logout',[AuthenticationController::class, 'logout'])->name('logout');
+            //Category
+
+            Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
+            Route::get('/category/list', [CategoryController::class, 'list'])->name('cat.list');
+            Route::get('/category/form', [CategoryController::class, 'form'])->name('cat.form');
+            Route::post('/category/store', [CategoryController::class, 'store'])->name('cat.store');
+            Route::get('/category/delete/{cat_id}', [CategoryController::class, 'delete'])->name('cat.delete');
+        
+
+        });
+
+  
+
+   
+
+
+});
 
 
