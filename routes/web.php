@@ -3,13 +3,11 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'admin'],function(){
-
-        
-   
 
     //login Page
 
@@ -26,13 +24,13 @@ Route::group(['prefix' => 'admin'],function(){
             Route::post('/category/store', [CategoryController::class, 'store'])->name('cat.store');
             Route::get('/category/delete/{cat_id}', [CategoryController::class, 'delete'])->name('cat.delete');
         
+            //product
+            Route::get('/product/list',[ProductController::class, 'list'])->name('pro.list');
+            Route::get('/product/form',[ProductController::class, 'form'])->name('pro.form');
+            Route::post('/product/store',[ProductController::class, 'store'])->name('pro.store');
+            Route::get('/product/delete',[ProductController::class, 'delete'])->name('pro.delete');
 
         });
-
-  
-
-   
-
 
 });
 
