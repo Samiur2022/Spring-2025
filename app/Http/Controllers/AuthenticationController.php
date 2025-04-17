@@ -16,21 +16,20 @@ class AuthenticationController extends Controller
        $credential = $request->except('_token');
        
        $check = Auth::attempt($credential);
-        
-       if($check){
-        notify()->success('login Sucessfully');
+       if ($check) {
+        toastr()->title('Admin login')->success('Login successfully!');
         return redirect()->route('dashboard');
-       }
-       else{
-        notify()->error('Incorrect email or password');
+    } else {
+        toastr()->title('Admin login')->error('Incorrect email or password');
         return redirect()->back();
-       }
+    }
+    
     }
 
 
     public function logout(){
         Auth::logout();
-        notify()->success('Successfully Logout');
+        toastr()->title('Admin Logout')->options(['progressBar' => false])->success('Logout successfully!');
         return redirect()->route('login');
 
     }
