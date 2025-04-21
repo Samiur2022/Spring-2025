@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function list(){
 
-        $product = Product::all();
+        $product = Product::with('category')->paginate(10);
 
         return view('productList', compact('product'));
     }
@@ -31,7 +31,7 @@ class ProductController extends Controller
             'descp'=>$request->pro_decp
         ]);
 
-        notify()->success('Product added');
+        toastr()->title('Product')->success('Product added');
         return redirect()->route('pro.list');
     }
 }

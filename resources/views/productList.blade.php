@@ -5,7 +5,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6">
+                <div class="col-10">
                     <h2>Product list</h2>
                   <h1>{{count($product)}}</h1>
                     <a class="btn btn-primary" href="{{route('pro.form')}}" >Create Product</a>
@@ -15,16 +15,20 @@
                     <tr>
                     <th scope="col">#</th>
                     <th scope="col">Product Name</th>
+                    <th scope="col">Product Category</th>
                     <th scope="col">Product Description</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
+                  
+                   
                 @foreach($product as $products)
                     <tr>
                     <th scope="row">{{$products->id}}</th>
                     <td>{{$products->name}}</td>
+                    <th scope="row">{{$products->category->name}}</th>
                     <td>{{$products->descp}}</</td>
                     <td>
                         <a class="btn btn-warning" href="">edit</a>
@@ -35,6 +39,7 @@
                    
                 </tbody>
             </table>
+            {{$product->links()}}
                 </div>
             </div>
         </div>
