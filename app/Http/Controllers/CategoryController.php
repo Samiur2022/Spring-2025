@@ -10,12 +10,12 @@ class CategoryController extends Controller
     public function list(){
 
         $cat = Category::all();
-        return view('categoryList',compact('cat'));
+        return view('Backend.categoryList',compact('cat'));
     }
 
 
     public function form(){
-        return view('categoryForm');
+        return view('Backend.categoryForm');
     }
 
     public function store(Request $request){

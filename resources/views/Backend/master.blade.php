@@ -40,11 +40,11 @@
 
 @include('notify::components.notify')        
 <!-- ========== Topbar Start ========== -->
-@include('fixed.header')
+@include('Backend.fixed.header')
 <!-- ========== Topbar End ========== -->
 
 <!-- ========== Left Sidebar Start ========== -->
-@include('fixed.sidebar')
+@include('Backend.fixed.sidebar')
 <!-- ========== Left Sidebar End ========== -->
 
 <!-- ============================================================== -->
@@ -57,7 +57,7 @@
 <!-- ============================================================== -->
 <!-- End Page content -->
 <!-- ============================================================== -->
-@include('fixed.footer')
+@include('Backend.fixed.footer')
 </div>
 <!-- END wrapper -->
 

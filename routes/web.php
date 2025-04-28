@@ -2,9 +2,20 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
+
+
+//Frontend Route
+
+Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
+
+
+
+
 
 
 Route::group(['prefix' => 'admin'],function(){
