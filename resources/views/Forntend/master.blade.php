@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://preview.colorlib.com/theme/capitalshop/assets/img/icon/favicon.png.webp">
 
     <!-- CSS here -->
+    
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/capitalshop/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/capitalshop/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/capitalshop/assets/css/slicknav.css">
@@ -24,13 +25,12 @@
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/capitalshop/assets/css/style.css">
 </head>
 <body>
-    <!--? Preloader Start -->
-    <div id="preloader-active">
+    <!--  Preloader Start -->
+     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <!-- <img src="assets/img/icon/loder.png" alt="loder"> -->
                     <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/icon/loder.png" alt="loder">
                 </div>
             </div>
@@ -57,8 +57,10 @@
 </div>
 
 <!-- JS here -->
+
 <!-- Jquery, Popper, Bootstrap -->
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/popper.min.js"></script>
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/bootstrap.min.js"></script>
@@ -82,6 +84,7 @@
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/jquery.validate.min.js"></script>
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/mail-script.js"></script>
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/jquery.ajaxchimp.min.js"></script>
+
 
 <!--  Plugins, main-Jquery -->	
 <script src="https://preview.colorlib.com/theme/capitalshop/assets/js/plugins.js"></script>

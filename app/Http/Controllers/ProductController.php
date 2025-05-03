@@ -22,7 +22,7 @@ class ProductController extends Controller
 
 
     public function store(Request $request){
-        // dd($request->all());
+         dd($request->all());
 
          //file upload
          if($request->hasFile('product_image')){

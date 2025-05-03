@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 //Frontend Route
 
 Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
+
+Route::get('/registration',[CustomerController::class,'viewRegForm'])->name('view.regForm');
+Route::post('/submit',[CustomerController::class,'regStoreForm'])->name('customer.submit');
+Route::post('/login',[CustomerController::class,'viewLogForm'])->name('customer.login');
+Route::post('/customer/submit',[CustomerController::class,'logStoreForm'])->name('customer.doLogin');
 
 
 
