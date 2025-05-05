@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 
 //Frontend Route
 
-Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 
 Route::get('/registration',[CustomerController::class,'viewRegForm'])->name('view.regForm');
 Route::post('/submit',[CustomerController::class,'regStoreForm'])->name('customer.submit');
@@ -20,6 +19,7 @@ Route::post('/login',[CustomerController::class,'viewLogForm'])->name('customer.
 Route::post('/customer/submit',[CustomerController::class,'logStoreForm'])->name('customer.doLogin');
 
 
+Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 
 
 

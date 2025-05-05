@@ -141,7 +141,11 @@
                                         <h3><a href="pro-details.html">{{$products->name}}</a></h3>
                                         <div class="properties-footer">
                                             <div class="price">
-                                                <span>$98.00 <span>$120.00</span></span>
+                                                <span>{{$products->price}} BDT
+                                                    @if($products->discount > 0)
+                                                    <span>{{$products->discount}}</span>
+                                                    @endif
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

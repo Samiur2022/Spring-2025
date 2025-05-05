@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -22,7 +23,22 @@ class ProductController extends Controller
 
 
     public function store(Request $request){
-         dd($request->all());
+         //dd($request->all());
+
+         //validation
+         $validation = Validator::make($request->all(),[
+            'pro_name' => 'required|string',
+            'pro_decp' => 'required',
+            'product_price' => 'required',
+            'product_stock' => 'required',
+            'product_image' => 'required|file|max:10240'
+
+         ]);
+
+         if($validation->fails()){
+            toastr()->title('Product Form')->success($validation->getMessageBag());
+            return redirect()->back();
+         }
 
          //file upload
          if($request->hasFile('product_image')){
@@ -32,11 +48,15 @@ class ProductController extends Controller
 
          }
 
-        //eloquent orm
+
+       //query
         Product::create([
             'category_id'=>$request->cat_id,
             'name'=>$request->pro_name,
             'descp'=>$request->pro_decp,
+            'price' =>$request->product_price,
+            'stock'=>$request->product_stock,
+            'discount'=>$request->product_discount,
             'image'=>$FileName
         ]);
 

@@ -17,6 +17,9 @@
                     <th scope="col">image</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Product Category</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Product Stock</th>
+                    <th scope="col">Product Discount</th>
                     <th scope="col">Product Description</th>
                     <th scope="col">Action</th>
                     </tr>
@@ -31,6 +34,15 @@
                         <td scope="row"><img src="{{'/upload/Products/'.$products->image}}" style="width:50px; height:40px" alt=""></td>
                         <td>{{$products->name}}</td>
                         <th scope="row">{{$products->category->name}}</th>
+                        <th scope="row">{{$products->price}} BDT</th>
+                        <th scope="row">{{$products->stock}}</th> 
+
+                        @if($products->discount > 0)                      
+                        <th scope="row">{{$products->discount}} BDT</th>
+                        @else
+                        <th scope="row" class="text-danger">No Discount</th>
+                        @endif
+                        
                         <td>{{$products->descp}}</</td>
                         <td>
                             <a class="btn btn-warning" href="">edit</a>
