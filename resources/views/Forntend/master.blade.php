@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/capitalshop/assets/css/style.css">
 </head>
 <body>
+
+
     <!--  Preloader Start -->
      <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -36,6 +38,7 @@
             </div>
         </div>
     </div>
+
     <!-- Preloader end -->
    <!-- header -->
     @include('Forntend.fixed.header')

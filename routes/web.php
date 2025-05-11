@@ -22,7 +22,9 @@ Route::post('/customer/submit',[CustomerController::class,'logStoreForm'])->name
 
 Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 
+
 Route::get('/addToCart/{product}',[OrderController::class,'addToCart'])->name('add.cart');
+Route::get('/cart',[OrderController::class,'cartView'])->name('cart.view');
 
 
 Route::group(['prefix' => 'admin'],function(){

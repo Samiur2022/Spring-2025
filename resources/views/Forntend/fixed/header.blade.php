@@ -83,7 +83,7 @@
                                         
                                 </li>
 
-                                <li class="cart"><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                                <li class="cart"><a href="cart.html"><span class="">{{count(Session::get('cart')) }}</span></a> </li>
                             </ul>
                         </div>
 
