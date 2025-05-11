@@ -14,7 +14,7 @@ class OrderController extends Controller
 
     //  dd($product_id);
 
-    $myCart = Session::get('cart');
+    $myCart = session()->get('cart');
 
     //dd($myCart);
     
@@ -36,7 +36,7 @@ class OrderController extends Controller
 
       ];
 
-      Session::put('cart', $cartFirst);
+      session()->put('cart', $cartFirst);
       toastr()->title('Add Cart')->success('First Product Added successfully!');
 
       return redirect()->back();
@@ -52,7 +52,7 @@ class OrderController extends Controller
       $myCart[$product_id]['subtotal'] = $myCart[$product_id]['price'] * $myCart[$product_id]['quantity'];
 
 
-      Session::put('cart', $myCart);
+      session()->put('cart', $myCart);
       toastr()->title('Add Cart')->success('Product Updated successfully!');
       return redirect()->back();
     } 
@@ -62,7 +62,7 @@ class OrderController extends Controller
 
       $product = Product::find($product_id);
 
-      $newCart[$product_id] = [
+      $myCart[$product_id] = [
 
         // array_key => value
 
@@ -75,7 +75,7 @@ class OrderController extends Controller
 
       ];
 
-      Session::put('cart', $newCart);
+      session()->put('cart', $myCart);
       toastr()->title('Add Cart')->success(' New Product Added successfully!');
       return redirect()->back();
     }
@@ -90,7 +90,7 @@ class OrderController extends Controller
 
 
     $myCart = Session::get('cart');
-     dd($myCart);
+    // dd($myCart);
     return view('Forntend.pages.cartView',compact('myCart'));
   }
 
