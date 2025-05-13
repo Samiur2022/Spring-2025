@@ -83,7 +83,13 @@
                                         
                                 </li>
 
-                                <li class="cart"><a href="cart.html"><span class="">{{count(Session::get('cart')) }}</span></a> </li>
+                                <li class="btn btn-danger">Cart<a href="{{ route('cart.view') }}">
+                                    @if(Session::has('cart'))
+                                         {{count(Session::get('cart')) }} items
+                                    @else
+                                    0 items
+                                    @endif    
+                                </a> </li>
                             </ul>
                         </div>
 

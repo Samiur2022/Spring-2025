@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\CustomerAuthController;
 use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\OrderController;
@@ -14,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 //Frontend Route
 
 
-Route::get('/registration',[CustomerController::class,'viewRegForm'])->name('view.regForm');
-Route::post('/submit',[CustomerController::class,'regStoreForm'])->name('customer.submit');
-Route::post('/login',[CustomerController::class,'viewLogForm'])->name('customer.login');
-Route::post('/customer/submit',[CustomerController::class,'logStoreForm'])->name('customer.doLogin');
+Route::get('/registration',[CustomerAuthController::class,'viewRegForm'])->name('view.regForm');
+Route::post('/submit',[CustomerAuthController::class,'regStoreForm'])->name('customer.submit');
+Route::get('/login',[CustomerAuthController::class,'viewLogForm'])->name('customer.login');
+Route::post('/customer/submit',[CustomerAuthController::class,'logStoreForm'])->name('customer.doLogin');
 
 
 Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
@@ -25,6 +26,13 @@ Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 
 Route::get('/addToCart/{product}',[OrderController::class,'addToCart'])->name('add.cart');
 Route::get('/cart',[OrderController::class,'cartView'])->name('cart.view');
+
+Route::group(['middleware' => 'customerAuth'],function(){
+
+    Route::get('/check-out',[OrderController::class,'checkOut'])->name('check.out');
+    Route::post('/place-order',[OrderController::class,'placeOrder'])->name('place.order');
+    
+});
 
 
 Route::group(['prefix' => 'admin'],function(){

@@ -39,6 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if( count($myCart) > 0)
                                 @foreach($myCart as $cartData)
                                 <tr>
                                     <td>
@@ -85,10 +86,14 @@
                                         <h5>Subtotal</h5>
                                     </td>
                                     <td>
-                                        <h5> {{array_sum (array_column ( Session::get('cart') ,'subtotal' ))}} </h5>
+                                        <h5> {{array_sum ( array_column ( Session::get('cart') ,'subtotal' ))}} </h5>
                                     </td>
                                 </tr>
-                                <tr class="shipping_area">
+                                @else
+                                    <h2>Cart is Empty !!</h2>
+
+                                @endif    
+                                <!-- <tr class="shipping_area">
                                     <td></td>
                                     <td></td>
                                     <td>
@@ -132,12 +137,12 @@
                                             <a class="btn" href="#">Update Details</a>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
-                        <div class="checkout_btn_inner float-right">
+                        <div class="checkout_btn_inner float-right" style="margin-right: 0;">
                             <a class="btn" href="#">Continue Shopping</a>
-                            <a class="btn checkout_btn" href="#">Proceed to checkout</a>
+                            <a class="btn checkout_btn" href="{{ route('check.out') }}">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
