@@ -140,7 +140,7 @@ class OrderController extends Controller
 
     toastr()->title('Place Order')->success(' Place Order successfully!');
     $myCart = Session::forget('cart');
-    return redirect()->route('home');
+    return redirect()->route('view.profile');
 
 
 

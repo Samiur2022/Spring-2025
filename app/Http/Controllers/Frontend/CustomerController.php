@@ -10,5 +10,8 @@ use Illuminate\Support\Facades\Validator;
 
 class CustomerController extends Controller
 {
-   
+   public function viewProfile(){
+
+    return view('Forntend.pages.profile');
+   }
 }
