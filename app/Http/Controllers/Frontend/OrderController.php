@@ -9,6 +9,7 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Karim007\SslcommerzLaravel\SslCommerz\SslCommerzNotification;
 use PhpParser\Node\Expr\FuncCall;
 
 class OrderController extends Controller
@@ -138,12 +139,27 @@ class OrderController extends Controller
 
     }
 
+    if($request->pay == 'SSL'){
+      $this->payNow($myorder);
+
+     // dd("ami");
+    }
+
+
     toastr()->title('Place Order')->success(' Place Order successfully!');
     $myCart = Session::forget('cart');
     return redirect()->route('view.profile');
 
 
 
+
+  }
+
+
+  public function payNow($myorder){
+
+   
+   
 
   }
 
