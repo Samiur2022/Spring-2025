@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('subtotal');
             $table->string('Total');
             $table->string('Pay_Method');
-            $table->string('Pay_Status')->default('un-paid');
+            $table->string('Pay_Status')->default('pending');
             $table->string('status')->default('pending');
             $table->timestamps();
         });
