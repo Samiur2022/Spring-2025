@@ -38,7 +38,22 @@ Route::group(['middleware' => 'customerAuth'],function(){
     Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
     Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
         
+    Route::get('/customer/profile',[CustomerController::class,'viewProfile'])->name('view.profile');
+
+
+
+    //PAYMENT SSL
+
+//SSLCOMMERZ END
+    
 });
+
+//ssl commerz
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 
 Route::group(['prefix' => 'admin'],function(){

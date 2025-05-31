@@ -10,6 +10,7 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Karim007\SslcommerzLaravel\SslCommerz\SslCommerzNotification;
 use PhpParser\Node\Expr\FuncCall;
 
 class OrderController extends Controller
@@ -212,7 +213,10 @@ class OrderController extends Controller
   }
 
 
+  public function payNow($myorder){
 
+   
+   
 
 
 

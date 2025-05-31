@@ -11,11 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->alias([
-            'customerAuth'=>CustomerAuth::class
-        ]);
-
         $middleware->validateCsrfTokens(except: [
             '/success',
             '/cancel',
@@ -23,6 +20,12 @@ return Application::configure(basePath: dirname(__DIR__))
             '/ipn',
             '/pay-via-ajax',
         ]);
+        
+        $middleware->alias([
+            'customerAuth'=>CustomerAuth::class
+            
+        ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
